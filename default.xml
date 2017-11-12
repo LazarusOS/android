@@ -30,6 +30,15 @@
   <remote  name="gitz"
            fetch="https://github.com/LineageOS"
 	   revision="cm-14.1" />
+
+  <remote  name="lazarus"
+	   fetch="https://github.com/LazarusOS"
+	   revision="boeffla_cm14"  />
+
+  <remote name="lazarus2"
+	   fetch="https://github.com/LazarusOS"
+	   revision="cm-14.0"  />
+
   <!-- AOSP custom lines end-->
 
   <default
@@ -52,6 +61,8 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
+  <project path="android" name="android" />
+  <project path="bootable/recovery-twrp" name="android_bootable_recovery-twrp" groups="pdk" />
   <!-- AOSP build category end-->
 
   <!-- AOSP init category start-->
@@ -85,6 +96,7 @@
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" remote="aosp" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" remote="aosp" />
   <project path="device/sample" name="device/sample" groups="pdk" remote="aosp" />
+  <project path="device/qcom/sepolicy" name="android_device_qcom_sepolicy" />
   <!-- AOSP device category end-->
 
   <!-- AOSP external category start-->
@@ -340,9 +352,46 @@
   <project path="external/zlib" name="android_external_zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
+  <project path="external/bash" name="android_external_bash" />
+  <project path="external/exfat" name="ThirdProject/android_external_exfat" remote="third" />
+  <project path="external/ffmpeg" name="ThirdProject/android_external_ffmpeg" remote="third" />
+  <project path="external/fuse" name="ThirdProject/android_external_fuse" remote="third" />
+  <project path="external/google" name="android_external_google" />
+  <project path="external/htop" name="ThirdProject/android_external_htop" remote="third" />
+  <project path="external/koush/ion" name="ThirdProject/ion" remote="third" />
+  <project path="external/libncurses" name="ThirdProject/android_external_libncurses" remote="third" />
+  <project path="external/libtar" name="ThirdProject/android_external_libtar" remote="third" />
+  <project path="external/libtruezip" name="ThirdProject/android_external_libtruezip" remote="third" />
+  <project path="external/lzo" name="ThirdProject/android_external_lzo" remote="third" />
+  <project path="external/BuildController" name="android_external_mokee_BuildController" />
+  <project path="external/ServerController" name="android_external_mokee_ServerController" revision="refs/heads/master" />
+  <project path="external/nano" name="ThirdProject/android_external_nano" remote="third" />
+  <project path="external/ntfs-3g" name="ThirdProject/android_external_ntfs-3g" remote="third" />
+  <project path="external/openssh" name="ThirdProject/android_external_openssh" remote="third" />
+  <project path="external/p7zip" name="android_external_p7zip" />
+  <project path="external/pigz" name="ThirdProject/android_external_pigz" remote="third" />
+  <project path="external/rsync" name="ThirdProject/android_external_rsync" remote="third" />
+  <project path="external/stagefright-plugins" name="ThirdProject/android_external_stagefright-plugins" remote="third" />
+  <project path="external/uicommon" name="android_external_mokee_UICommon" />
+  <project path="external/unrar" name="ThirdProject/android_external_unrar" remote="third" />
+  <project path="external/unzip" name="ThirdProject/android_external_unzip" remote="third" />
+  <project path="external/vim" name="ThirdProject/android_external_vim" remote="third" />
+  <project path="external/yaffs2" name="ThirdProject/android_external_yaffs2" remote="third" />
+  <project path="external/zip" name="ThirdProject/android_external_zip" remote="third" />
+  <project path="external/ant-wireless/ant_native" name="ThirdProject/android_external_ant-wireless_ant_native" remote="third" />
+  <project path="external/ant-wireless/ant_service" name="ThirdProject/android_external_ant-wireless_ant_service" remote="third" />
+  <project path="external/ant-wireless/antradio-library" name="ThirdProject/android_external_ant-wireless_antradio-library" remote="third" />
+  <project path="external/brctl" name="ThirdProject/android_external_brctl" remote="third" />
+  <project path="external/connectivity" name="ThirdProject/android_external_connectivity" remote="third" />
+  <project path="external/ebtables" name="ThirdProject/android_external_ebtables" remote="third" />
+  <project path="external/gson" name="ThirdProject/android_external_gson" remote="third" />
+  <project path="external/json-c" name="ThirdProject/android_external_json-c" remote="third" />
+  <project path="external/libnetfilter_conntrack" name="ThirdProject/android_external_libnetfilter_conntrack" remote="third" />
+  <project path="external/libnfnetlink" name="ThirdProject/android_external_libnfnetlink" remote="third" />
+  <project path="external/powertop" name="ThirdProject/android_external_powertop" remote="third" />
+  <project path="external/protobuf-c" name="ThirdProject/android_external_protobuf-c" remote="third" />
 
   <!-- AOSP custom lines start-->
-  <project path="external/BuildController" name="android_external_mokee_BuildController" groups="pdk" />
   <project path="external/Silence" name="platform_external_Silence" remote="github" />
   <!-- AOSP custom lines end-->
   <!-- AOSP external category end-->
@@ -382,6 +431,8 @@
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
+  <project path="frameworks/opt/hardware" name="android_frameworks_opt_hardware" />
+  <project path="frameworks/xposed" name="android_frameworks_xposed" />
   <!-- AOSP frameworks category end-->
 
   <!-- AOSP hardware category start-->
@@ -419,6 +470,41 @@
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3,pdk" remote="aosp" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah,pdk" remote="aosp" />
   <project path="hardware/ti/omap4xxx" name="ThirdProject/android_hardware_ti_omap4xxx" groups="omap4,pdk" remote="third" />
+  <project path="hardware/mokee" name="android_hardware_mokee" />
+  <project path="hardware/ti/omap4" name="android_hardware_ti_omap4" />
+  <project path="hardware/ti/wlan" name="android_hardware_ti_wlan" />
+  <project path="hardware/ti/wpan" name="android_hardware_ti_wpan" />
+  <project path="hardware/qcom/audio-caf/apq8084" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8084" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8916" />
+  <project path="hardware/qcom/audio-caf/msm8952" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8952" />
+  <project path="hardware/qcom/audio-caf/msm8960" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8960" />
+  <project path="hardware/qcom/audio-caf/msm8974" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8974" />
+  <project path="hardware/qcom/audio-caf/msm8994" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8994" />
+  <project path="hardware/qcom/audio-caf/msm8996" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8996" />
+  <project path="hardware/qcom/audio-caf/msm8998" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-8998" />
+  <project path="hardware/qcom/audio-caf/sdm660" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="mkn-mr1-caf-660" />
+  <project path="hardware/qcom/bt-caf" name="android_hardware_qcom_bt" groups="qcom" revision="mkn-mr1-caf" />
+  <project path="hardware/qcom/display-caf/apq8084" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8084" />
+  <project path="hardware/qcom/display-caf/msm8916" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8916" />
+  <project path="hardware/qcom/display-caf/msm8952" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8952" />
+  <project path="hardware/qcom/display-caf/msm8960" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8960" />
+  <project path="hardware/qcom/display-caf/msm8974" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8974" />
+  <project path="hardware/qcom/display-caf/msm8994" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8994" />
+  <project path="hardware/qcom/display-caf/msm8996" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8996" />
+  <project path="hardware/qcom/display-caf/msm8998" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-8998" />
+  <project path="hardware/qcom/display-caf/sdm660" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="mkn-mr1-caf-660" />
+  <project path="hardware/qcom/fm" name="android_hardware_qcom_fm" groups="qcom,qcom_fm" />
+  <project path="hardware/qcom/media-caf/apq8084" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8084" />
+  <project path="hardware/qcom/media-caf/msm8916" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8916" />
+  <project path="hardware/qcom/media-caf/msm8952" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8952" />
+  <project path="hardware/qcom/media-caf/msm8960" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8960" />
+  <project path="hardware/qcom/media-caf/msm8974" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8974" />
+  <project path="hardware/qcom/media-caf/msm8994" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8994" />
+  <project path="hardware/qcom/media-caf/msm8996" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8996" />
+  <project path="hardware/qcom/media-caf/msm8998" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-8998" />
+  <project path="hardware/qcom/media-caf/sdm660" name="android_hardware_qcom_media" groups="qcom" revision="mkn-mr1-caf-660" />
+  <project path="hardware/qcom/wlan-caf" name="android_hardware_qcom_wlan" groups="qcom_wlan" revision="mkn-mr1-caf" />
+  <project path="hardware/ril-caf" name="android_hardware_ril" groups="pdk" revision="mkn-mr1-caf" />
   <!-- AOSP custom lines start-->
   <project name="proprietary_vendor_samsung" path="vendor/samsung" remote="TheMuppets" />
   <project name="android_hardware_mokee" path="platform/hardware/mokee" />
@@ -466,6 +552,22 @@
   <project path="packages/apps/TV" name="android_packages_apps_TV" />
   <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" groups="pdk-fs" />
   <project path="packages/apps/WallpaperPicker" name="android_packages_apps_WallpaperPicker" />
+  <project path="packages/apps/Aegis" name="android_packages_apps_Aegis" />
+  <project path="packages/apps/AudioFX" name="android_packages_apps_AudioFX" />
+  <project path="packages/apps/MKCenter" name="android_packages_apps_MKCenter" />
+  <project path="packages/apps/MKParts" name="android_packages_apps_MKParts" />
+  <project path="packages/apps/Eleven" name="android_packages_apps_Eleven" />
+  <project path="packages/apps/Exchange" name="ThirdProject/android_packages_apps_Exchange" remote="third" />
+  <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" />
+  <project path="packages/apps/Jelly" name="android_packages_apps_Jelly" />
+  <project path="packages/apps/Lawnchair" name="android_packages_apps_Lawnchair" />
+  <project path="packages/apps/LockClock" name="android_packages_apps_LockClock" />
+  <project path="packages/apps/Profiles" name="android_packages_apps_Profiles" />
+  <project path="packages/apps/Recorder" name="android_packages_apps_Recorder" />
+  <project path="packages/apps/SetupWizard" name="android_packages_apps_SetupWizard" />
+  <project path="packages/apps/Snap" name="android_packages_apps_Snap" />
+  <project path="packages/apps/Venus" name="android_packages_apps_Venus" />
+  <project path="packages/apps/XposedInstaller" name="android_packages_apps_XposedInstaller" />
   <!-- AOSP custom lines start-->
   <project path="packages/apps/OpenWeatherMapProvider" name="android_packages_apps_OpenWeatherMapProvider" remote="gitz" />
   <project path="packages/apps/Gello" name="android_packages_apps_Gello" remote="gitz" />
@@ -492,6 +594,9 @@
   <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/TvProvider" name="android_packages_providers_TvProvider" groups="pdk-fs" />
   <project path="packages/providers/UserDictionaryProvider" name="android_packages_providers_UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/DataUsageProvider" name="android_packages_providers_DataUsageProvider" />
+  <project path="packages/providers/MoKeeWeatherProvider" name="android_packages_providers_MoKeeWeatherProvider" />
+  <project path="packages/providers/WeatherProvider" name="android_packages_providers_WeatherProvider" />
   <!-- AOSP packages/providers category end-->
 
   <!-- AOSP packages/screensavers category start-->
@@ -505,6 +610,10 @@
   <project path="packages/services/Mms" name="ThirdProject/android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" remote="third" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/MKAudioService" name="android_packages_services_MKAudioService" />
+  <project path="packages/services/MKUpdateVerification" name="android_packages_services_MKUpdateVerification" />
+  <project path="packages/services/ThemeInterfacer" name="android_packages_services_ThemeInterfacer" />
+  <project path="packages/services/WeatherService" name="android_packages_services_WeatherService" />
   <!-- AOSP packages/services category end-->
 
   <!-- AOSP packages/misc category start-->
@@ -551,6 +660,8 @@
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" remote="aosp" />
+  <project path="prebuilts/mksdk" name="android_prebuilts_mksdk" clone-depth="1" />
+  <project path="prebuilts/snapdragon/llvm-3.8" name="android_prebuilts_snapdragon_llvm-3.8" groups="pdk,linux,arm" clone-depth="1" />
   <!-- AOSP prebuilts category end-->
 
   <!-- AOSP system category start-->
@@ -577,6 +688,8 @@
   <project path="system/vold" name="android_system_vold" groups="pdk" />
   <project path="system/weaved" name="platform/system/weaved" remote="aosp" />
   <project path="system/webservd" name="platform/system/webservd" remote="aosp" />
+  <project path="system/extras/su" name="android_system_extras_su" />
+  <project path="system/qcom" name="android_system_qcom" groups="qcom" />
   <!-- AOSP system category end-->
 
   <!-- AOSP toolchain/tools category start-->
@@ -595,6 +708,21 @@
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" remote="aosp" />
   <!-- AOSP toolchain/tools category end-->
 
-  <include name="snippets/mokee.xml" />
+  <!-- AOSP vendor category start-->
+  <project path="vendor/mk" name="android_vendor_mk" />
+  <project path="vendor/mksdk" name="mk_platform_sdk" />
+  <project path="vendor/private" name="mk_private" />
+  <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" />
+  <project path="vendor/qcom/opensource/bluetooth" name="android_vendor_qcom_opensource_bluetooth" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="android_vendor_qcom_opensource_cryptfs_hw" />
+  <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" />
+  <project path="vendor/qcom/opensource/dpm" name="android_vendor_qcom_opensource_dpm" />
+  <project path="vendor/qcom/opensource/time-services" name="android_vendor_qcom_opensource_time-services" />
+  <!-- AOSP vendor category end-->
+
+  <!-- MoKee private start-->
+  <project path="packages/resources/MoKeePay" name="android_packages_resources_MoKeePay" />
+  <!-- MoKee private end-->
+
 
 </manifest>
