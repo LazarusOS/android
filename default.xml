@@ -588,7 +588,7 @@
    <project path="packages/apps/YahooWeatherProvider" name="android_packages_apps_YahooWeatherProvider" remote="gitz" />
   <project path="packages/apps/AmazeFileManager" name="android_packages_apps_AmazeFileManager" />
   <project path="packages/apps/Screencast" name="android_packages_apps_Screencast" />
-  <project path="packages/apps/f-zip" name="f-zip" />
+  <project path="packages/apps/f-zip" name="f-zip" remote="fzip" />
   <!-- AOSP custom lines end-->
   <!-- AOSP packages/apps category end-->
 
