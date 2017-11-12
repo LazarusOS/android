@@ -23,21 +23,29 @@
            fetch="https://github.com/copperheados/"
            revision="refs/heads/oreo-r3-release" />
 
-  <remote  name="TheMuppets"
-           fetch="https://github.com/TheMuppets" 
-	   revision="cm-14.1" />
-
   <remote  name="gitz"
            fetch="https://github.com/LineageOS"
 	   revision="cm-14.1" />
 
-  <remote  name="lazarus"
+  <remote  name="boeff_fork"
 	   fetch="https://github.com/LazarusOS"
 	   revision="boeffla_cm14"  />
 
-  <remote name="lazarus2"
+  <remote name="hagger_fork"
 	   fetch="https://github.com/LazarusOS"
 	   revision="cm-14.0"  />
+
+  <remote name="spack_fork"
+	   fetch="https://github.com/LazarusOS"
+	   revision="Nougat"  />
+
+  <remote  name="muppet_forks"
+           fetch="https://github.com/LazarusOS" 
+	   revision="cm-14.1" />
+
+  <remote  name="muppet_forks_external"
+           fetch="https://github.com/TheMuppets" 
+	   revision="cm-14.1" />
 
   <!-- AOSP custom lines end-->
 
@@ -506,7 +514,6 @@
   <project path="hardware/qcom/wlan-caf" name="android_hardware_qcom_wlan" groups="qcom_wlan" revision="mkn-mr1-caf" />
   <project path="hardware/ril-caf" name="android_hardware_ril" groups="pdk" revision="mkn-mr1-caf" />
   <!-- AOSP custom lines start-->
-  <project name="proprietary_vendor_samsung" path="vendor/samsung" remote="TheMuppets" />
   <project name="android_hardware_mokee" path="platform/hardware/mokee" />
   <!-- AOSP custom lines end-->
   <!-- AOSP hardware category end-->
@@ -574,6 +581,7 @@
    <project path="packages/apps/YahooWeatherProvider" name="android_packages_apps_YahooWeatherProvider" remote="gitz" />
   <project path="packages/apps/AmazeFileManager" name="android_packages_apps_AmazeFileManager" />
   <project path="packages/apps/Screencast" name="android_packages_apps_Screencast" />
+  <project path="packages/apps/f-zip" name="f-zip" />
   <!-- AOSP custom lines end-->
   <!-- AOSP packages/apps category end-->
 
@@ -718,6 +726,45 @@
   <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" />
   <project path="vendor/qcom/opensource/dpm" name="android_vendor_qcom_opensource_dpm" />
   <project path="vendor/qcom/opensource/time-services" name="android_vendor_qcom_opensource_time-services" />
+  <!-- AOSP custom lines start-->
+  <project name="proprietary_vendor_samsung" path="vendor/samsung" remote="muppet_forks" />
+  <project name="proprietary_vendor_broadcom" path="vendor/broadcom" remote="muppet_forks" />
+  <project name="proprietary_vendor_qcom_binaries" path="vendor/qcom" remote="muppet_forks" />
+  <project name="proprietary_vendor_alcatel" path="vendor/alcatel"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_amazon" path="vendor/amazon"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_ark" path="vendor/ark"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_asus" path="vendor/asus"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_audience" path="vendor/audience"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_bn" path="vendor/bn"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_bq" path="vendor/bq"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_elan" path="vendor/elan"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_essential" path="vendor/essential"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_fairphone" path="vendor/fairphone"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_google" path="vendor/google"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_htc" path="vendor/htc"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_huawei" path="vendor/huawei"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_invensense" path="vendor/invensense"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_leeco" path="vendor/leeco"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_lenovo" path="vendor/lenovo"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_lge" path="vendor/lge"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_motorola" path="vendor/motorola"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_nextbit" path="vendor/nextbit"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_nubia" path="vendor/nubia"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_nvidia" path="vendor/nvidia"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_nxp" path="vendor/nxp"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_oneplus" path="vendor/oneplus"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_oppo" path="vendor/oppo"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_smartfren" path="vendor/smartfren"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_sony" path="vendor/sony"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_ti" path="vendor/ti" revision="master"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_widevine" path="vendor/widevine"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_wileyfox" path="vendor/wileyfox"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_wingtech" path="vendor/wingtech"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_xiaomi" path="vendor/xiaomi"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_yu" path="vendor/yu"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_zte" path="vendor/zte"  remote="muppet_forks_external"  />
+  <project name="proprietary_vendor_zuk" path="vendor/zuk"  remote="muppet_forks_external"  />
+  <!-- AOSP custom lines end-->
   <!-- AOSP vendor category end-->
 
   <!-- MoKee private start-->
