@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
+ <!-- LazarusOS manifest xml testing-->
+ <!-- AOSP remote category start-->
   <remote  name="mokee"
            fetch=".."
            review="https://mokeedev.review" />
@@ -23,8 +24,9 @@
            remote="mokee"
            sync-c="true"
            sync-j="4" />
+  <!-- AOSP remote category end-->
 
-  <!-- AOSP Projects -->
+  <!-- AOSP build category start-->
 
   <project path="build" name="MoKee/android_build" groups="pdk">
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -35,14 +37,23 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
+  <!-- AOSP build category end-->
+
+  <!-- AOSP init category start-->
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" remote="aosp" />
   <project path="art" name="MoKee/android_art" groups="pdk" />
   <project path="bionic" name="MoKee/android_bionic" groups="pdk" />
   <project path="bootable/recovery" name="MoKee/android_bootable_recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="dalvik" name="MoKee/android_dalvik" groups="pdk-cw-fs,pdk-fs" />
+  <!-- AOSP init category end-->
+
+  <!-- AOSP developer category start-->
   <project path="developers/build" name="platform/developers/build" remote="aosp" />
   <project path="development" name="MoKee/android_development" groups="pdk-cw-fs,pdk-fs" />
+  <!-- AOSP developer category end-->
+
+  <!-- AOSP device category start-->
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" remote="aosp" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" remote="aosp" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" remote="aosp" />
@@ -59,6 +70,9 @@
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" remote="aosp" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" remote="aosp" />
   <project path="device/sample" name="device/sample" groups="pdk" remote="aosp" />
+  <!-- AOSP device category end-->
+
+  <!-- AOSP external category start-->
   <project path="external/aac" name="ThirdProject/android_external_aac" groups="pdk" remote="third" />
   <project path="external/adt-infra" name="platform/external/adt-infra" groups="adt-infra,notdefault,pdk-fs" remote="aosp" />
   <project path="external/android-clat" name="ThirdProject/android_external_android-clat" groups="pdk" remote="third" />
@@ -311,6 +325,9 @@
   <project path="external/zlib" name="MoKee/android_external_zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
+  <!-- AOSP external category end-->
+
+  <!-- AOSP frameworks category start-->
   <project path="frameworks/av" name="MoKee/android_frameworks_av" groups="pdk" />
   <project path="frameworks/base" name="MoKee/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" remote="aosp" />
@@ -345,6 +362,9 @@
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
+  <!-- AOSP frameworks category end-->
+
+  <!-- AOSP hardware category start-->
   <project path="hardware/akm" name="platform/hardware/akm" groups="pdk" remote="aosp" />
   <project path="hardware/broadcom/libbt" name="ThirdProject/android_hardware_broadcom_libbt" groups="pdk" remote="third" />
   <project path="hardware/broadcom/wlan" name="ThirdProject/android_hardware_broadcom_wlan" groups="pdk,broadcom_wlan" remote="third" />
@@ -379,9 +399,15 @@
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3,pdk" remote="aosp" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah,pdk" remote="aosp" />
   <project path="hardware/ti/omap4xxx" name="ThirdProject/android_hardware_ti_omap4xxx" groups="omap4,pdk" remote="third" />
+  <!-- AOSP hardware category end-->
+
+  <!-- AOSP lib/ndk category start-->
   <project path="libcore" name="MoKee/android_libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" remote="aosp" />
+  <!-- AOSP lib/ndk category end-->
+
+  <!-- AOSP packages/apps category start-->
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="packages/apps/Bluetooth" name="MoKee/android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Calendar" name="MoKee/android_packages_apps_Calendar" groups="pdk-fs" />
@@ -416,8 +442,14 @@
   <project path="packages/apps/TV" name="MoKee/android_packages_apps_TV" />
   <project path="packages/apps/UnifiedEmail" name="MoKee/android_packages_apps_UnifiedEmail" groups="pdk-fs" />
   <project path="packages/apps/WallpaperPicker" name="MoKee/android_packages_apps_WallpaperPicker" />
+  <!-- AOSP packages/apps category end-->
+
+  <!-- AOSP packages--exp/input category start-->
   <project path="packages/experimental" name="platform/packages/experimental" remote="aosp" />
   <project path="packages/inputmethods/LatinIME" name="ThirdProject/android_packages_inputmethods_LatinIME" groups="pdk-fs" remote="third" />
+  <!-- AOSP packages--exp/input category end-->
+
+  <!-- AOSP packages/providers category start-->
   <project path="packages/providers/BlockedNumberProvider" name="ThirdProject/android_packages_providers_BlockedNumberProvider" groups="pdk-fs" remote="third" />
   <project path="packages/providers/BookmarkProvider" name="ThirdProject/android_packages_providers_BookmarkProvider" groups="pdk-fs" remote="third" />
   <project path="packages/providers/CalendarProvider" name="MoKee/android_packages_providers_CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
@@ -429,16 +461,28 @@
   <project path="packages/providers/TelephonyProvider" name="MoKee/android_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/TvProvider" name="MoKee/android_packages_providers_TvProvider" groups="pdk-fs" />
   <project path="packages/providers/UserDictionaryProvider" name="MoKee/android_packages_providers_UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
+  <!-- AOSP packages/providers category end-->
+
+  <!-- AOSP packages/screensavers category start-->
   <project path="packages/screensavers/Basic" name="ThirdProject/android_packages_screensavers_Basic" groups="pdk-fs" remote="third" />
   <project path="packages/screensavers/PhotoTable" name="ThirdProject/android_packages_screensavers_PhotoTable" groups="pdk-fs" remote="third" />
   <project path="packages/screensavers/WebView" name="ThirdProject/android_packages_screensavers_WebView" groups="pdk-fs" remote="third" />
+  <!-- AOSP packages/screensavers category end-->
+
+  <!-- AOSP packages/services category start-->
   <project path="packages/services/Car" name="ThirdProject/android_packages_services_Car" groups="adp8064,pdk-cw-fs,pdk-fs" remote="third" />
   <project path="packages/services/Mms" name="ThirdProject/android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" remote="third" />
   <project path="packages/services/Telecomm" name="MoKee/android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/Telephony" name="MoKee/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
+  <!-- AOSP packages/services category end-->
+
+  <!-- AOSP packages/misc category start-->
   <project path="packages/wallpapers/LivePicker" name="ThirdProject/android_packages_wallpapers_LivePicker" groups="pdk-fs" remote="third" />
   <project path="pdk" name="platform/pdk" groups="pdk" remote="aosp" />
   <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" remote="aosp" />
+  <!-- AOSP packages/misc category end-->
+
+  <!-- AOSP prebuilts category start-->
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" groups="pdk-fs" clone-depth="1" remote="aosp" />
   <project path="prebuilts/clang/darwin-x86/host/3.6" name="platform/prebuilts/clang/darwin-x86/host/3.6" groups="pdk,darwin" clone-depth="1" remote="aosp" />
   <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="pdk,linux" clone-depth="1" remote="aosp" />
@@ -476,6 +520,9 @@
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" remote="aosp" />
+  <!-- AOSP prebuilts category end-->
+
+  <!-- AOSP system category start-->
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="system/bt" name="MoKee/android_system_bt" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" />
@@ -499,6 +546,9 @@
   <project path="system/vold" name="MoKee/android_system_vold" groups="pdk" />
   <project path="system/weaved" name="platform/system/weaved" remote="aosp" />
   <project path="system/webservd" name="platform/system/webservd" remote="aosp" />
+  <!-- AOSP system category end-->
+
+  <!-- AOSP toolchain/tools category start-->
   <project path="toolchain/binutils" name="toolchain/binutils" remote="aosp" />
   <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" remote="aosp" />
   <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" remote="aosp" />
@@ -512,6 +562,7 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" remote="aosp" />
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" remote="aosp" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" remote="aosp" />
+  <!-- AOSP toolchain/tools category end-->
 
   <include name="snippets/mokee.xml" />
 
