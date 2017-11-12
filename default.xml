@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
- <!-- LazarusOS manifest xml testing-->
- <!-- AOSP remote category start-->
+ 
+ <!-- AOSP remote category start -->
   <remote  name="mokee"
            fetch=".."
            review="https://mokeedev.review" />
@@ -325,6 +325,10 @@
   <project path="external/zlib" name="MoKee/android_external_zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
+
+  <!-- AOSP custom lines start-->
+  <project path="external/BuildController" name="platform/external/BuildController" groups="pdk" remote="aosp" />
+  <!-- AOSP custom lines end-->
   <!-- AOSP external category end-->
 
   <!-- AOSP frameworks category start-->
