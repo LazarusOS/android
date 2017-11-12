@@ -3,32 +3,47 @@
  
  <!-- AOSP remote category start -->
   <remote  name="mokee"
-           fetch=".."
-           review="https://mokeedev.review" />
+           fetch="https://github.com/mokee/"
+           revision="mkn-mr1" />
 
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
   <remote  name="aosp"
-           fetch="http://android.googlesource.com"
-           review="android-review.googlesource.com"
+           fetch="http://android.googlesource.com/"
            revision="refs/tags/android-7.1.2_r29" />
 
   <remote  name="third"
            fetch=".."
            review="https://mokeedev.review"
-           revision="refs/heads/cm-14.1" />
+           revision="cm-14.1" />
+
+  <!-- AOSP custom lines start-->
+  <remote  name="github"
+           fetch="https://github.com/copperheados/"
+           revision="refs/heads/oreo-r3-release" />
+
+  <remote  name="TheMuppets"
+           fetch="https://github.com/TheMuppets" 
+	   revision="cm-14.1" />
+
+  <remote  name="gitz"
+           fetch="https://github.com/LineageOS"
+	   revision="cm-14.1" />
+  <!-- AOSP custom lines end-->
 
   <default
-           revision="refs/heads/mkn-mr1"
+           revision="mkn-mr1"
+           fetch="https://github.com/mokee/"
            remote="mokee"
            sync-c="true"
-           sync-j="4" />
+           sync-j="8" />
+
   <!-- AOSP remote category end-->
 
   <!-- AOSP build category start-->
 
-  <project path="build" name="MoKee/android_build" groups="pdk">
+  <project path="build" name="android_build" groups="pdk">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp" />
@@ -41,16 +56,16 @@
 
   <!-- AOSP init category start-->
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" remote="aosp" />
-  <project path="art" name="MoKee/android_art" groups="pdk" />
-  <project path="bionic" name="MoKee/android_bionic" groups="pdk" />
-  <project path="bootable/recovery" name="MoKee/android_bootable_recovery" groups="pdk" />
+  <project path="art" name="android_art" groups="pdk" />
+  <project path="bionic" name="android_bionic" groups="pdk" />
+  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="dalvik" name="MoKee/android_dalvik" groups="pdk-cw-fs,pdk-fs" />
+  <project path="dalvik" name="android_dalvik" groups="pdk-cw-fs,pdk-fs" />
   <!-- AOSP init category end-->
 
   <!-- AOSP developer category start-->
   <project path="developers/build" name="platform/developers/build" remote="aosp" />
-  <project path="development" name="MoKee/android_development" groups="pdk-cw-fs,pdk-fs" />
+  <project path="development" name="android_development" groups="pdk-cw-fs,pdk-fs" />
   <!-- AOSP developer category end-->
 
   <!-- AOSP device category start-->
@@ -172,7 +187,7 @@
   <project path="external/javassist" name="platform/external/javassist" groups="pdk" remote="aosp" />
   <project path="external/jcommander" name="platform/external/jcommander" groups="pdk" remote="aosp" />
   <project path="external/jdiff" name="platform/external/jdiff" groups="pdk" remote="aosp" />
-  <project path="external/jemalloc" name="MoKee/android_external_jemalloc" groups="pdk" />
+  <project path="external/jemalloc" name="android_external_jemalloc" groups="pdk" />
   <project path="external/jetty" name="platform/external/jetty" groups="pdk" remote="aosp" />
   <project path="external/jhead" name="platform/external/jhead" groups="pdk" remote="aosp" />
   <project path="external/jline" name="platform/external/jline" groups="notdefault,tradefed,pdk-fs" remote="aosp" />
@@ -202,7 +217,7 @@
   <project path="external/libgdx" name="platform/external/libgdx" groups="pdk" remote="aosp" />
   <project path="external/libgsm" name="platform/external/libgsm" groups="pdk" remote="aosp" />
   <project path="external/libhevc" name="ThirdProject/android_external_libhevc" groups="pdk" remote="third" />
-  <project path="external/libjpeg-turbo" name="MoKee/android_external_libjpeg-turbo" groups="pdk" />
+  <project path="external/libjpeg-turbo" name="android_external_libjpeg-turbo" groups="pdk" />
   <project path="external/liblzf" name="platform/external/liblzf" groups="pdk" remote="aosp" />
   <project path="external/libmicrohttpd" name="platform/external/libmicrohttpd" groups="pdk" remote="aosp" />
   <project path="external/libmpeg2" name="ThirdProject/android_external_libmpeg2" groups="pdk" remote="third" />
@@ -214,8 +229,8 @@
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" remote="aosp" />
   <project path="external/libpcap" name="platform/external/libpcap" groups="pdk" remote="aosp" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk" remote="aosp" />
-  <project path="external/libpng" name="MoKee/android_external_libpng" groups="pdk" />
-  <project path="external/libselinux" name="MoKee/android_external_libselinux" groups="pdk" />
+  <project path="external/libpng" name="android_external_libpng" groups="pdk" />
+  <project path="external/libselinux" name="android_external_libselinux" groups="pdk" />
   <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" remote="aosp" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" remote="aosp" />
   <project path="external/libusb" name="platform/external/libusb" groups="pdk-cw-fs,pdk" remote="aosp" />
@@ -241,7 +256,7 @@
   <project path="external/mesa3d" name="platform/external/mesa3d" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="external/messageformat" name="platform/external/messageformat" groups="pdk" remote="aosp" />
   <project path="external/minijail" name="platform/external/minijail" groups="pdk" remote="aosp" />
-  <project path="external/mksh" name="MoKee/android_external_mksh" groups="pdk" />
+  <project path="external/mksh" name="android_external_mksh" groups="pdk" />
   <project path="external/mmc-utils" name="platform/external/mmc-utils" groups="pdk" remote="aosp" />
   <project path="external/mockftpserver" name="platform/external/mockftpserver" groups="pdk" remote="aosp" />
   <project path="external/mockito" name="platform/external/mockito" groups="pdk" remote="aosp" />
@@ -258,7 +273,7 @@
   <project path="external/nfacct" name="platform/external/nfacct" groups="pdk" remote="aosp" />
   <project path="external/nist-pkits" name="platform/external/nist-pkits" groups="pdk" remote="aosp" />
   <project path="external/nist-sip" name="platform/external/nist-sip" groups="pdk" remote="aosp" />
-  <project path="external/noto-fonts" name="MoKee/android_external_noto-fonts" groups="pdk" />
+  <project path="external/noto-fonts" name="android_external_noto-fonts" groups="pdk" />
   <project path="external/oauth" name="platform/external/oauth" groups="pdk" remote="aosp" />
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" remote="aosp" />
   <project path="external/okhttp" name="ThirdProject/android_external_okhttp" groups="pdk" remote="third" />
@@ -283,7 +298,7 @@
   <project path="external/selinux" name="platform/external/selinux" groups="pdk" remote="aosp" />
   <project path="external/shflags" name="platform/external/shflags" groups="pdk" remote="aosp" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" remote="aosp" />
-  <project path="external/skia" name="MoKee/android_external_skia" groups="pdk,qcom_msm8x26" />
+  <project path="external/skia" name="android_external_skia" groups="pdk,qcom_msm8x26" />
   <project path="external/sl4a" name="platform/external/sl4a" groups="pdk" remote="aosp" />
   <project path="external/slf4j" name="platform/external/slf4j" groups="pdk" remote="aosp" />
   <project path="external/smali" name="platform/external/smali" groups="pdk" remote="aosp" />
@@ -291,7 +306,7 @@
   <project path="external/sonic" name="platform/external/sonic" groups="pdk" remote="aosp" />
   <project path="external/sonivox" name="ThirdProject/android_external_sonivox" groups="pdk" remote="third" />
   <project path="external/speex" name="ThirdProject/android_external_speex" groups="pdk" remote="third" />
-  <project path="external/sqlite" name="MoKee/android_external_sqlite" groups="pdk" />
+  <project path="external/sqlite" name="android_external_sqlite" groups="pdk" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" remote="aosp" />
   <project path="external/srtp" name="platform/external/srtp" groups="pdk" remote="aosp" />
   <project path="external/strace" name="platform/external/strace" groups="pdk" remote="aosp" />
@@ -322,18 +337,19 @@
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="pdk" remote="aosp" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" groups="pdk" remote="aosp" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" groups="pdk" remote="aosp" />
-  <project path="external/zlib" name="MoKee/android_external_zlib" groups="pdk" />
+  <project path="external/zlib" name="android_external_zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
 
   <!-- AOSP custom lines start-->
-  <project path="external/BuildController" name="platform/external/BuildController" groups="pdk" remote="aosp" />
+  <project path="external/BuildController" name="android_external_mokee_BuildController" groups="pdk" />
+  <project path="external/Silence" name="platform_external_Silence" remote="github" />
   <!-- AOSP custom lines end-->
   <!-- AOSP external category end-->
 
   <!-- AOSP frameworks category start-->
-  <project path="frameworks/av" name="MoKee/android_frameworks_av" groups="pdk" />
-  <project path="frameworks/base" name="MoKee/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" remote="aosp" />
@@ -341,7 +357,7 @@
   <project path="frameworks/minikin" name="ThirdProject/android_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" remote="third" />
   <project path="frameworks/ml" name="platform/frameworks/ml" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="frameworks/native" name="MoKee/android_frameworks_native" groups="pdk" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" remote="aosp" />
   <project path="frameworks/opt/bluetooth" name="platform/frameworks/opt/bluetooth" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
@@ -354,14 +370,14 @@
   <project path="frameworks/opt/net/ethernet" name="platform/frameworks/opt/net/ethernet" groups="pdk-fs" remote="aosp" />
   <project path="frameworks/opt/net/ims" name="ThirdProject/android_frameworks_opt_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="third" />
   <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="frameworks/opt/net/wifi" name="MoKee/android_frameworks_opt_net_wifi" groups="pdk" />
+  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" groups="pdk" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/setupwizard" name="ThirdProject/android_frameworks_opt_setupwizard" groups="pdk-cw-fs,pdk-fs" remote="third" />
-  <project path="frameworks/opt/telephony" name="MoKee/android_frameworks_opt_telephony" groups="pdk" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" />
   <project path="frameworks/opt/timezonepicker" name="platform/frameworks/opt/timezonepicker" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/vcard" name="ThirdProject/android_frameworks_opt_vcard" groups="pdk-cw-fs,pdk-fs" remote="third" />
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" remote="aosp" />
-  <project path="frameworks/support" name="MoKee/android_frameworks_support" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/support" name="android_frameworks_support" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/data-binding" name="platform/frameworks/data-binding" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
@@ -387,84 +403,95 @@
   <project path="hardware/intel/img/psb_headers" name="ThirdProject/android_hardware_intel_img_psb_headers" groups="intel,pdk" remote="third" />
   <project path="hardware/intel/img/psb_video" name="ThirdProject/android_hardware_intel_img_psb_video" groups="intel,pdk" remote="third" />
   <project path="hardware/invensense" name="ThirdProject/android_hardware_invensense" groups="invensense,pdk" remote="third" />
-  <project path="hardware/libhardware" name="MoKee/android_hardware_libhardware" groups="pdk" />
-  <project path="hardware/libhardware_legacy" name="MoKee/android_hardware_libhardware_legacy" groups="pdk" />
+  <project path="hardware/libhardware" name="android_hardware_libhardware" groups="pdk" />
+  <project path="hardware/libhardware_legacy" name="android_hardware_libhardware_legacy" groups="pdk" />
   <project path="hardware/marvell/bt" name="platform/hardware/marvell/bt" groups="marvell_bt,pdk" remote="aosp" />
-  <project path="hardware/qcom/audio/default" name="MoKee/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" />
-  <project path="hardware/qcom/bootctrl" name="MoKee/android_hardware_qcom_bootctrl" groups="pdk" />
-  <project path="hardware/qcom/bt" name="MoKee/android_hardware_qcom_bt" groups="qcom" />
-  <project path="hardware/qcom/camera" name="MoKee/android_hardware_qcom_camera" groups="qcom" />
-  <project path="hardware/qcom/display" name="MoKee/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" />
-  <project path="hardware/qcom/gps" name="MoKee/android_hardware_qcom_gps" groups="qcom,qcom_gps,pdk" />
-  <project path="hardware/qcom/keymaster" name="MoKee/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk" />
-  <project path="hardware/qcom/media" name="MoKee/android_hardware_qcom_media" groups="qcom,pdk" />
-  <project path="hardware/qcom/wlan" name="MoKee/android_hardware_qcom_wlan" groups="qcom_wlan,pdk" />
-  <project path="hardware/ril" name="MoKee/android_hardware_ril" groups="pdk" />
+  <project path="hardware/qcom/audio/default" name="android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" />
+  <project path="hardware/qcom/bootctrl" name="android_hardware_qcom_bootctrl" groups="pdk" />
+  <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" groups="qcom" />
+  <project path="hardware/qcom/camera" name="android_hardware_qcom_camera" groups="qcom" />
+  <project path="hardware/qcom/display" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" />
+  <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" groups="qcom,qcom_gps,pdk" />
+  <project path="hardware/qcom/keymaster" name="android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster,pdk" />
+  <project path="hardware/qcom/media" name="android_hardware_qcom_media" groups="qcom,pdk" />
+  <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" groups="qcom_wlan,pdk" />
+  <project path="hardware/ril" name="android_hardware_ril" groups="pdk" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3,pdk" remote="aosp" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah,pdk" remote="aosp" />
   <project path="hardware/ti/omap4xxx" name="ThirdProject/android_hardware_ti_omap4xxx" groups="omap4,pdk" remote="third" />
+  <!-- AOSP custom lines start-->
+  <project name="proprietary_vendor_samsung" path="vendor/samsung" remote="TheMuppets" />
+  <project name="android_hardware_mokee" path="platform/hardware/mokee" />
+  <!-- AOSP custom lines end-->
   <!-- AOSP hardware category end-->
 
   <!-- AOSP lib/ndk category start-->
-  <project path="libcore" name="MoKee/android_libcore" groups="pdk" />
+  <project path="libcore" name="android_libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" remote="aosp" />
   <!-- AOSP lib/ndk category end-->
 
   <!-- AOSP packages/apps category start-->
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="packages/apps/Bluetooth" name="MoKee/android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Calendar" name="MoKee/android_packages_apps_Calendar" groups="pdk-fs" />
-  <project path="packages/apps/Camera2" name="MoKee/android_packages_apps_Camera2" groups="pdk-fs" />
-  <project path="packages/apps/CarrierConfig" name="MoKee/android_packages_apps_CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/Calendar" name="android_packages_apps_Calendar" groups="pdk-fs" />
+  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" groups="pdk-fs" />
+  <project path="packages/apps/CarrierConfig" name="android_packages_apps_CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" name="ThirdProject/android_packages_apps_CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" remote="third" />
   <project path="packages/apps/CertInstaller" name="ThirdProject/android_packages_apps_CertInstaller" groups="pdk-cw-fs,pdk-fs" remote="third" />
-  <project path="packages/apps/Contacts" name="MoKee/android_packages_apps_Contacts" groups="pdk-fs" />
-  <project path="packages/apps/ContactsCommon" name="MoKee/android_packages_apps_ContactsCommon" groups="pdk-fs" />
-  <project path="packages/apps/DeskClock" name="MoKee/android_packages_apps_DeskClock" groups="pdk-fs" />
-  <project path="packages/apps/Dialer" name="MoKee/android_packages_apps_Dialer" groups="pdk-fs" />
-  <project path="packages/apps/Email" name="MoKee/android_packages_apps_Email" groups="pdk-fs" />
+  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" groups="pdk-fs" />
+  <project path="packages/apps/ContactsCommon" name="android_packages_apps_ContactsCommon" groups="pdk-fs" />
+  <project path="packages/apps/DeskClock" name="android_packages_apps_DeskClock" groups="pdk-fs" />
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" groups="pdk-fs" />
+  <project path="packages/apps/Email" name="android_packages_apps_Email" groups="pdk-fs" />
   <project path="packages/apps/EmergencyInfo" name="ThirdProject/android_packages_apps_EmergencyInfo" groups="pdk-fs" remote="third" />
-  <project path="packages/apps/ExactCalculator" name="MoKee/android_packages_apps_ExactCalculator" groups="pdk-fs" />
+  <project path="packages/apps/ExactCalculator" name="android_packages_apps_ExactCalculator" groups="pdk-fs" />
   <project path="packages/apps/HTMLViewer" name="ThirdProject/android_packages_apps_HTMLViewer" groups="pdk-fs" remote="third" />
   <project path="packages/apps/KeyChain" name="ThirdProject/android_packages_apps_KeyChain" groups="pdk-fs" remote="third" />
   <project path="packages/apps/ManagedProvisioning" name="ThirdProject/android_packages_apps_ManagedProvisioning" groups="pdk-fs" remote="third" />
-  <project path="packages/apps/Messaging" name="MoKee/android_packages_apps_Messaging" groups="pdk-fs" />
-  <project path="packages/apps/Nfc" name="MoKee/android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" groups="pdk-fs" />
+  <project path="packages/apps/Nfc" name="android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/PackageInstaller" name="MoKee/android_packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/PhoneCommon" name="MoKee/android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/PhoneCommon" name="android_packages_apps_PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SafetyRegulatoryInfo" name="ThirdProject/android_packages_apps_SafetyRegulatoryInfo" remote="third" />
-  <project path="packages/apps/Settings" name="MoKee/android_packages_apps_Settings" groups="pdk-fs" />
-  <project path="packages/apps/Stk" name="MoKee/android_packages_apps_Stk" groups="apps_stk,pdk-fs" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" />
+  <project path="packages/apps/Stk" name="android_packages_apps_Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/StorageManager" name="ThirdProject/android_packages_apps_StorageManager" groups="pdk-fs" remote="third" />
   <project path="packages/apps/Tag" name="ThirdProject/android_packages_apps_Tag" groups="pdk-fs" remote="third" />
   <project path="packages/apps/Terminal" name="ThirdProject/android_packages_apps_Terminal" groups="pdk-fs" remote="third" />
   <project path="packages/apps/Test/connectivity" name="platform/packages/apps/Test/connectivity" groups="pdk" remote="aosp" />
-  <project path="packages/apps/TvSettings" name="MoKee/android_packages_apps_TvSettings" groups="generic_fs" />
-  <project path="packages/apps/TV" name="MoKee/android_packages_apps_TV" />
-  <project path="packages/apps/UnifiedEmail" name="MoKee/android_packages_apps_UnifiedEmail" groups="pdk-fs" />
-  <project path="packages/apps/WallpaperPicker" name="MoKee/android_packages_apps_WallpaperPicker" />
+  <project path="packages/apps/TvSettings" name="android_packages_apps_TvSettings" groups="generic_fs" />
+  <project path="packages/apps/TV" name="android_packages_apps_TV" />
+  <project path="packages/apps/UnifiedEmail" name="android_packages_apps_UnifiedEmail" groups="pdk-fs" />
+  <project path="packages/apps/WallpaperPicker" name="android_packages_apps_WallpaperPicker" />
+  <!-- AOSP custom lines start-->
+  <project path="packages/apps/OpenWeatherMapProvider" name="android_packages_apps_OpenWeatherMapProvider" remote="gitz" />
+  <project path="packages/apps/Gello" name="android_packages_apps_Gello" remote="gitz" />
+   <project path="packages/apps/YahooWeatherProvider" name="android_packages_apps_YahooWeatherProvider" remote="gitz" />
+  <project path="packages/apps/AmazeFileManager" name="android_packages_apps_AmazeFileManager" />
+  <project path="packages/apps/Screencast" name="android_packages_apps_Screencast" />
+  <!-- AOSP custom lines end-->
   <!-- AOSP packages/apps category end-->
 
-  <!-- AOSP packages--exp/input category start-->
+  <!-- AOSP packages exp/input category start-->
   <project path="packages/experimental" name="platform/packages/experimental" remote="aosp" />
   <project path="packages/inputmethods/LatinIME" name="ThirdProject/android_packages_inputmethods_LatinIME" groups="pdk-fs" remote="third" />
-  <!-- AOSP packages--exp/input category end-->
+  <!-- AOSP packages exp/input category end-->
 
   <!-- AOSP packages/providers category start-->
   <project path="packages/providers/BlockedNumberProvider" name="ThirdProject/android_packages_providers_BlockedNumberProvider" groups="pdk-fs" remote="third" />
   <project path="packages/providers/BookmarkProvider" name="ThirdProject/android_packages_providers_BookmarkProvider" groups="pdk-fs" remote="third" />
-  <project path="packages/providers/CalendarProvider" name="MoKee/android_packages_providers_CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/CallLogProvider" name="MoKee/android_packages_providers_CallLogProvider" groups="pdk-fs" />
-  <project path="packages/providers/ContactsProvider" name="MoKee/android_packages_providers_ContactsProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/DownloadProvider" name="MoKee/android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/MediaProvider" name="MoKee/android_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/CalendarProvider" name="android_packages_providers_CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/CallLogProvider" name="android_packages_providers_CallLogProvider" groups="pdk-fs" />
+  <project path="packages/providers/ContactsProvider" name="android_packages_providers_ContactsProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/PartnerBookmarksProvider" name="ThirdProject/android_packages_providers_PartnerBookmarksProvider" groups="pdk-fs" remote="third" />
-  <project path="packages/providers/TelephonyProvider" name="MoKee/android_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/TvProvider" name="MoKee/android_packages_providers_TvProvider" groups="pdk-fs" />
-  <project path="packages/providers/UserDictionaryProvider" name="MoKee/android_packages_providers_UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/TelephonyProvider" name="android_packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/providers/TvProvider" name="android_packages_providers_TvProvider" groups="pdk-fs" />
+  <project path="packages/providers/UserDictionaryProvider" name="android_packages_providers_UserDictionaryProvider" groups="pdk-cw-fs,pdk-fs" />
   <!-- AOSP packages/providers category end-->
 
   <!-- AOSP packages/screensavers category start-->
@@ -476,8 +503,8 @@
   <!-- AOSP packages/services category start-->
   <project path="packages/services/Car" name="ThirdProject/android_packages_services_Car" groups="adp8064,pdk-cw-fs,pdk-fs" remote="third" />
   <project path="packages/services/Mms" name="ThirdProject/android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" remote="third" />
-  <project path="packages/services/Telecomm" name="MoKee/android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/services/Telephony" name="MoKee/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
   <!-- AOSP packages/services category end-->
 
   <!-- AOSP packages/misc category start-->
@@ -528,26 +555,26 @@
 
   <!-- AOSP system category start-->
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="system/bt" name="MoKee/android_system_bt" groups="pdk" />
+  <project path="system/bt" name="android_system_bt" groups="pdk" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" remote="aosp" />
   <project path="system/connectivity/dhcp_client" name="platform/system/connectivity/dhcp_client" remote="aosp" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" remote="aosp" />
-  <project path="system/core" name="MoKee/android_system_core" groups="pdk" />
-  <project path="system/extras" name="MoKee/android_system_extras" groups="pdk" />
+  <project path="system/core" name="android_system_core" groups="pdk" />
+  <project path="system/extras" name="android_system_extras" groups="pdk" />
   <project path="system/firewalld" name="platform/system/firewalld" remote="aosp" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" remote="aosp" />
   <project path="system/keymaster" name="ThirdProject/android_system_keymaster" groups="pdk" remote="third" />
   <project path="system/media" name="ThirdProject/android_system_media" groups="pdk" remote="third" />
   <project path="system/nativepower" name="platform/system/nativepower" remote="aosp" />
-  <project path="system/netd" name="MoKee/android_system_netd" groups="pdk" />
+  <project path="system/netd" name="android_system_netd" groups="pdk" />
   <project path="system/nvram" name="platform/system/nvram" remote="aosp" />
   <project path="system/security" name="ThirdProject/android_system_security" groups="pdk" remote="third" />
-  <project path="system/sepolicy" name="MoKee/android_system_sepolicy" groups="pdk" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" />
   <project path="system/tools/aidl" name="ThirdProject/android_system_tools_aidl" groups="pdk" remote="third" />
   <project path="system/tpm" name="platform/system/tpm" remote="aosp" />
   <project path="system/update_engine" name="platform/system/update_engine" groups="pdk" remote="aosp" />
-  <project path="system/vold" name="MoKee/android_system_vold" groups="pdk" />
+  <project path="system/vold" name="android_system_vold" groups="pdk" />
   <project path="system/weaved" name="platform/system/weaved" remote="aosp" />
   <project path="system/webservd" name="platform/system/webservd" remote="aosp" />
   <!-- AOSP system category end-->
