@@ -46,7 +46,14 @@
   <remote  name="muppet_forks_external"
            fetch="https://github.com/TheMuppets" 
 	   revision="cm-14.1" />
+  
+  <remote  name="fzip"
+           fetch="https://github.com/LazarusOS" 
+	   revision="master" />
 
+  <remote  name="omnijaws"
+           fetch="https://github.com/LazarusOS" 
+	   revision="android-7.1" />
   <!-- AOSP custom lines end-->
 
   <default
@@ -622,6 +629,7 @@
   <project path="packages/services/MKUpdateVerification" name="android_packages_services_MKUpdateVerification" />
   <project path="packages/services/ThemeInterfacer" name="android_packages_services_ThemeInterfacer" />
   <project path="packages/services/WeatherService" name="android_packages_services_WeatherService" />
+  <project path="packages/services/OmniJaws" name="android_packages_services_OmniJaws" remote="omnijaws" />
   <!-- AOSP packages/services category end-->
 
   <!-- AOSP packages/misc category start-->
