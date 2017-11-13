@@ -54,6 +54,10 @@
   <remote  name="omnijaws"
            fetch="https://github.com/LazarusOS" 
 	   revision="android-7.1" />
+
+  <remote  name="omnigear_fork"
+           fetch="https://github.com/LazarusOS" 
+	   revision="android-7.1" />
   <!-- AOSP custom lines end-->
 
   <default
@@ -61,7 +65,7 @@
            fetch="https://github.com/mokee/"
            remote="mokee"
            sync-c="true"
-           sync-j="8" />
+           sync-j="4" />
 
   <!-- AOSP remote category end-->
 
@@ -589,6 +593,7 @@
   <project path="packages/apps/AmazeFileManager" name="android_packages_apps_AmazeFileManager" />
   <project path="packages/apps/Screencast" name="android_packages_apps_Screencast" />
   <project path="packages/apps/f-zip" name="f-zip" remote="fzip" />
+  <project path="packages/apps/OmniGears" name="android_packages_apps_OmniGears" remote="omnigear_fork" />
   <!-- AOSP custom lines end-->
   <!-- AOSP packages/apps category end-->
 
@@ -737,7 +742,9 @@
   <!-- AOSP custom lines start-->
   <project name="proprietary_vendor_samsung" path="vendor/samsung" remote="muppet_forks" />
   <project name="proprietary_vendor_broadcom" path="vendor/broadcom" remote="muppet_forks" />
-  <project name="proprietary_vendor_qcom_binaries" path="vendor/qcom" remote="muppet_forks" />
+  <!--Deprecated Repo-->
+  <!--project name="proprietary_vendor_qcom_binaries" path="vendor/qcom" remote="muppet_forks" /-->
+  <!--Deprecated Repo-->
   <!-- AOSP custom lines end-->
   <!-- AOSP vendor category end-->
 
