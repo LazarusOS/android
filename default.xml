@@ -19,10 +19,6 @@
            revision="cm-14.1" />
 
   <!-- AOSP custom lines start-->
-  <remote  name="github"
-           fetch="https://github.com/copperheados/"
-           revision="refs/heads/oreo-r3-release" />
-
   <remote  name="gitz"
            fetch="https://github.com/LineageOS"
 	   revision="cm-14.1" />
@@ -417,10 +413,6 @@
   <project path="external/libnfnetlink" name="ThirdProject/android_external_libnfnetlink" remote="third" />
   <project path="external/powertop" name="ThirdProject/android_external_powertop" remote="third" />
   <project path="external/protobuf-c" name="ThirdProject/android_external_protobuf-c" remote="third" />
-
-  <!-- AOSP custom lines start-->
-  <project path="external/Silence" name="platform_external_Silence" remote="github" />
-  <!-- AOSP custom lines end-->
   <!-- AOSP external category end-->
 
   <!-- AOSP frameworks category start-->
